@@ -7,7 +7,7 @@ import co.anilozturk.playground.calculator.operation.OperationType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Multiplication implements Operation {
+public class Multiplication extends Operation {
 
     @Override
     public OperationOutput process(OperationInput input) {

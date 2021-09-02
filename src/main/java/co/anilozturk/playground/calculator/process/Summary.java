@@ -7,7 +7,7 @@ import co.anilozturk.playground.calculator.operation.OperationType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Summary implements Operation {
+public class Summary extends Operation {
 
     @Override
     public OperationOutput process(OperationInput input) {

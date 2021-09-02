@@ -1,5 +1,6 @@
 package co.anilozturk.playground.calculator.operation;
 
+import co.anilozturk.playground.exception.CalculatorException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -30,7 +31,7 @@ public class OperationDeserializer extends StdDeserializer<OperationType> {
         final String operationSymbol = parser.getValueAsString();
         final OperationType operationType = Arrays.stream(OperationType.values())
                 .filter(o -> operationSymbol.equals(o.getSymbol()))
-                .findFirst().orElseThrow(Exception::new);
+                .findFirst().orElseThrow(() -> new CalculatorException("Unsupported Operation!"));
 
         return operationType;
     }

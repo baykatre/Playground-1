@@ -27,6 +27,6 @@ public class CalculatorService {
 
         Operation operation = locator.getOperation(operationType);
 
-        return operation.process(input);
+        return operation.wrapProcess(input);
     }
 }

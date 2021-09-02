@@ -7,7 +7,7 @@ import co.anilozturk.playground.calculator.operation.OperationType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Divide implements Operation {
+public class Divide extends Operation {
 
     @Override
     public OperationOutput process(OperationInput input) {

@@ -7,7 +7,7 @@ import co.anilozturk.playground.calculator.operation.OperationType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Subtraction implements Operation {
+public class Subtraction extends Operation {
 
     @Override
     public OperationOutput process(OperationInput input) {

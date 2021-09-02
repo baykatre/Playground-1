@@ -1,6 +1,16 @@
 package co.anilozturk.playground.calculator.operation;
 
-public interface Operation {
+import co.anilozturk.playground.exception.CalculatorException;
 
-    OperationOutput process(OperationInput input);
+public abstract class Operation {
+
+    protected abstract OperationOutput process(OperationInput input);
+
+    public OperationOutput wrapProcess(OperationInput input) {
+        try {
+            return process(input);
+        } catch (ArithmeticException e) {
+            throw new CalculatorException("Arithmetic Error!");
+        }
+    }
 }
