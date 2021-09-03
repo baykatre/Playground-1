@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class OperationDeserializer extends StdDeserializer<OperationType> {
+    public static final String UNSUPPORTED_OPERATION = "Unsupported Operation!";
+
     protected OperationDeserializer(Class<?> vc) {
         super(vc);
     }
@@ -31,7 +33,7 @@ public class OperationDeserializer extends StdDeserializer<OperationType> {
         final String operationSymbol = parser.getValueAsString();
         final OperationType operationType = Arrays.stream(OperationType.values())
                 .filter(o -> operationSymbol.equals(o.getSymbol()))
-                .findFirst().orElseThrow(() -> new CalculatorException("Unsupported Operation!"));
+                .findFirst().orElseThrow(() -> new CalculatorException(UNSUPPORTED_OPERATION));
 
         return operationType;
     }
