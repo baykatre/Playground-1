@@ -22,11 +22,6 @@ public class CalculatorController {
         return ResponseEntity.ok(supportedOperationTypes);
     }
 
-    @GetMapping("/1")
-    ResponseEntity<OperationInput> getOperationModel() {
-        return ResponseEntity.ok(new OperationInput());
-    }
-
     @PostMapping
     ResponseEntity<OperationOutput> process(@RequestBody OperationInput input){
 

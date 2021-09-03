@@ -3,6 +3,7 @@ package co.anilozturk.playground;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
@@ -14,6 +15,7 @@ import org.springframework.web.WebApplicationInitializer;
 //@EnableRetry
 @Slf4j
 @EnableTransactionManagement
+@EntityScan(basePackageClasses = {PackageMarker.class})
 public class Playground1Application extends SpringBootServletInitializer implements WebApplicationInitializer {
 
     public static void main(String[] args) {
