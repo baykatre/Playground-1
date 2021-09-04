@@ -12,8 +12,8 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-@JsonSerialize(using = OperationSerializer.class)
-@JsonDeserialize(using = OperationDeserializer.class)
+@JsonSerialize(using = OperationTypeSerializer.class)
+@JsonDeserialize(using = OperationTypeDeserializer.class)
 public enum OperationType {
 
     SUM("SUMMATION", "+", Summary.class.getSimpleName()),

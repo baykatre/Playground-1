@@ -2,28 +2,25 @@ package co.anilozturk.playground.calculator.operation;
 
 import co.anilozturk.playground.exception.CalculatorException;
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-public class OperationDeserializer extends StdDeserializer<OperationType> {
+public class OperationTypeDeserializer extends StdDeserializer<OperationType> {
     public static final String UNSUPPORTED_OPERATION = "Unsupported Operation!";
 
-    protected OperationDeserializer(Class<?> vc) {
+    protected OperationTypeDeserializer(Class<?> vc) {
         super(vc);
     }
 
-    OperationDeserializer() {
+    OperationTypeDeserializer() {
         super(OperationType.class);
     }
 
-    @SneakyThrows
     @Override
-    public OperationType deserialize(JsonParser parser, DeserializationContext context) throws IOException, JsonProcessingException {
+    public OperationType deserialize(JsonParser parser, DeserializationContext context) throws IOException {
 
         /*
         final Reflections reflections = new Reflections("co.anilozturk.playground.calculator");

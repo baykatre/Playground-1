@@ -1,10 +1,12 @@
 package co.anilozturk.playground.exception;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.Optional;
 
+@Getter
 @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 public class PlayException extends RuntimeException{
 

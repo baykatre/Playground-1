@@ -7,17 +7,17 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import java.io.IOException;
 
 @SuppressWarnings("rawtypes")
-public class OperationSerializer extends StdSerializer<OperationType> {
+public class OperationTypeSerializer extends StdSerializer<OperationType> {
 
     public static final String NAME = "name";
 
     public static final String OPERATOR = "operator";
 
-    public OperationSerializer(Class<OperationType> t) {
+    public OperationTypeSerializer(Class<OperationType> t) {
         super(t);
     }
 
-    public OperationSerializer() {
+    public OperationTypeSerializer() {
         this(null);
     }
 
