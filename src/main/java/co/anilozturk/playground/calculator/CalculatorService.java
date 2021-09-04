@@ -1,9 +1,6 @@
 package co.anilozturk.playground.calculator;
 
-import co.anilozturk.playground.calculator.operation.Operation;
-import co.anilozturk.playground.calculator.operation.OperationType;
-import co.anilozturk.playground.calculator.operation.OperationInput;
-import co.anilozturk.playground.calculator.operation.OperationOutput;
+import co.anilozturk.playground.calculator.operation.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
