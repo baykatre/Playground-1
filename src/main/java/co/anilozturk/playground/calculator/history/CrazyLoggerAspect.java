@@ -41,9 +41,10 @@ public class CrazyLoggerAspect {
         }
 
         final OperationInput input = (OperationInput) params[0];
-        final ResponseEntity responseEntity = (ResponseEntity) returnValue;
+        final ResponseEntity<?> responseEntity = (ResponseEntity<?>) returnValue;
         final OperationOutput output = (OperationOutput) responseEntity.getBody();
 
+        assert output != null;
         final History history = History.builder()
                 .firstNumber(input.getFirstNumber())
                 .secondNumber(input.getSecondNumber())
@@ -56,6 +57,6 @@ public class CrazyLoggerAspect {
 
     private boolean isCalculationMethod(Object param, Object returnValue) {
         return param instanceof OperationInput && returnValue instanceof ResponseEntity
-                && ((ResponseEntity) returnValue).getBody() instanceof OperationOutput;
+                && ((ResponseEntity<?>) returnValue).getBody() instanceof OperationOutput;
     }
 }
